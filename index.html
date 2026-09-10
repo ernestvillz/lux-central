@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lux Central — Luxury, Engineered</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="siteNav">
+  <div class="nav-inner">
+    <div class="brand">LUX <span>CENTRAL</span></div>
+    <nav><ul>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul></nav>
+    <a href="#collection" class="nav-cta">Book a test drive</a>
+  </div>
+</header>
+
+<!-- ============ HERO / PREVIEW ============ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-veil"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">THE 2027 COLLECTION</div>
+    <h1 class="hero-headline">Engineered for<br><em>presence.</em></h1>
+    <p class="hero-sub">Five vehicles. One standard. Explore the full Lux Central lineup and step inside any model in full 3D before you decide.</p>
+    <a href="#collection" class="btn btn-primary">Explore the collection</a>
+  </div>
+  <div class="scroll-cue"><span></span>Scroll</div>
+</section>
+
+<!-- ============ COLLECTION / SHOWROOM ============ -->
+<section id="collection">
+  <div class="section-head">
+    <div class="eyebrow">The showroom</div>
+    <h2>Choose your model.</h2>
+    <p>Click any vehicle to step inside a full 3D view, with complete specs.</p>
+  </div>
+  <div class="car-grid" id="carGrid"></div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="experience-grid">
+    <div class="experience-copy">
+      <div class="eyebrow">The experience</div>
+      <h2>Every detail, considered twice.</h2>
+      <p>From the stitching on the seats to the weight of the door as it closes — nothing at Lux Central ships until it feels inevitable. Our design studio tests over 400 material combinations before a single one reaches the showroom floor.</p>
+      <div class="stat-row">
+        <div class="stat"><b>400+</b><span>Materials tested per model</span></div>
+        <div class="stat"><b>7</b><span>Years, average ownership</span></div>
+        <div class="stat"><b>24/7</b><span>Concierge support</span></div>
+      </div>
+    </div>
+    <div class="experience-visual"></div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section id="visit">
+  <div class="eyebrow">Visit a showroom</div>
+  <h2 class="section-title-solo">Sit in it before you decide.</h2>
+  <div class="visit-grid">
+    <div class="visit-form">
+      <div class="field"><label>Full name</label><input type="text" placeholder="Your name"></div>
+      <div class="field"><label>Preferred model</label>
+        <select id="visitModelSelect"><option>No preference</option></select>
+      </div>
+      <div class="field"><label>Email</label><input type="text" placeholder="you@email.com"></div>
+      <a href="#" class="btn btn-primary">Request a private viewing</a>
+    </div>
+    <div class="visit-info">
+      <h3>Lux Central Showroom</h3>
+      <div class="row"><span>Hours</span><span>Mon–Sat, 9AM–7PM</span></div>
+      <div class="row"><span>Test drives</span><span>By appointment</span></div>
+      <div class="row"><span>Trade-in</span><span>Same-day appraisal</span></div>
+      <div class="row"><span>Delivery</span><span>Nationwide, white-glove</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand small">LUX <span>CENTRAL</span></div>
+  <div>&copy; 2027 Lux Central — a student project.</div>
+</footer>
+
+<!-- ============ FULL VIEW MODAL ============ -->
+<div id="detailOverlay">
+  <button id="closeDetail" aria-label="Close">&times;</button>
+  <div class="detail-inner">
+    <div class="detail-canvas-wrap">
+      <canvas id="detail-canvas"></canvas>
+      <div class="drag-hint">Drag to rotate</div>
+    </div>
+    <div class="detail-info">
+      <div class="detail-category" id="detailCategory">SEDAN</div>
+      <h2 id="detailName">Model name</h2>
+      <p class="detail-desc" id="detailDesc">Description.</p>
+      <div class="spec-grid" id="detailSpecs"></div>
+      <div class="detail-price" id="detailPrice">$0</div>
+      <div class="detail-actions">
+        <button class="btn btn-primary" id="buyBtn">Reserve this vehicle</button>
+        <button class="btn btn-outline" id="closeDetailBtn">Back to collection</button>
+      </div>
+      <div class="buy-confirm" id="buyConfirm">Thank you — a Lux Central concierge will reach out within 24 hours to arrange your reservation.</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/cars-data.js"></script>
+<script src="js/car-builder.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
